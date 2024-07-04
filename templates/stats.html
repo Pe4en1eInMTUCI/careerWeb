@@ -10,30 +10,15 @@
 </head>
 <body>
 
-    <section class="vacancies">
+    <section class="stats">
         <div class="wrapper">
-
-            {% for vacancy in vacancies %}
-
-            <div class="vacCard">
-                <div class="vacInfo">
-                    <div class="vacDesc">
-                        <h1 class="vacTitle">{{ vacancy['name'] }}</h1>
-                        <h1 class="vacArea">{{ vacancy['area'] }}</h1>
-                        <h1 class="vacDescription">{{ vacancy['requirement'] }}</h1>
-                        <div class="lowerInfo">
-                            <div class="openVacBtn">
-                                <a href="{{ vacancy['url'] }}" class="linkTo">
-                                    Подробнее
-                                </a>
-                            </div>
-                            <h1 class="vacSalary">{{ vacancy['salary'] }}</h1>
-                        </div>
-                    </div>
-                </div>
+            <div class="statsBlock">
+                <h1 class="mainText">Да-да, это статистика!</h1>
+                <h1 class="mostLabel"><a class="accent">{{request}}</a> - запрос с самым большим количеством вакансий!</h1>
+                <h1 class="found"><a class="accent">{{count}}</a> - а именно столько вакансий было найдено</h1>
+                <a href="/" class="goToMain">Круто! А теперь на главную...</a>
             </div>
-            
-            {% endfor %}
+
 
         </div>
     </section>

@@ -28,7 +28,11 @@ def search():
 
 @app.route('/stats')
 def stats():
-    return render_template('stats.html')
+
+    data = requests.get("http://127.0.0.1:8800/getStats").json()
+
+
+    return render_template('stats.html', request=data[0], count=data[1])
 
 if __name__ == '__main__':
     app.run(debug=True, port=80)
