@@ -126,9 +126,9 @@ html{
 .searchForm {
 
     height: 100%;
-    width: 820px;
+    width: 900px;
 
-    margin-left: 115px;
+    margin-left: 75px;
 
     align-items: center;
     display: flex;
@@ -140,14 +140,51 @@ html{
     font-family: 'HarmonyOs Sans Regular';
 
     height: 50px;
-    width: 700px;
+    width: 400px;
     
     font-size: 20px;
-    border-radius: 15px;
-    border: 0;
+    border-radius: 15px 0px 0px 15px;
+    border: 0px;
     background-color: #383838;
     padding-left: 20px;
     color: #fff;
+    border-right: 2px #000000 solid;
+}
+
+.jobSchedule {
+
+    font-family: 'HarmonyOs Sans Regular';
+
+    height: 50px;
+    width: 200px;
+    
+    font-size: 20px;
+    border: 0;
+    background-color: #383838;
+    color: #fff;
+
+    padding: 10px;
+
+    border-right: 2px #000000 solid;
+
+}
+
+.jobExp {
+
+    font-family: 'HarmonyOs Sans Regular';
+
+    height: 50px;
+    width: 180px;
+    
+    font-size: 20px;
+    border: 0;
+    background-color: #383838;
+    color: #fff;
+
+    padding: 10px;
+
+    border-radius: 0px 15px 15px 0px;
+
 }
 
 .findBtn {
@@ -170,7 +207,6 @@ html{
     border-radius: 17px;
     background-color: #88EE92;
 }
-
 
 .vacancies {
     padding-top: 120px;
@@ -246,7 +282,10 @@ html{
     color: #fff;
     font-family: 'HarmonyOs Sans Bold';
     font-size: 20px;
-    margin-top: 8px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
 }
 
 .openVacBtn:hover {

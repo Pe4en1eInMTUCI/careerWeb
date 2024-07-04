@@ -1,21 +1,30 @@
 import requests
 from flask import Flask, request, render_template
 import requests as rq
+import random
 
 app = Flask(__name__)
 
 @app.route('/')
 def root():
-    return render_template('index.html')
+
+    jobs = ['Программист', 'Врач', 'Учитель', 'Архитектор', 'Юрист', 'Менеджер', 'Инженер', 'Дизайнер', 'Маркетолог', 'Повар']
+    cities = ['Москва', 'Минск', 'Кишинев', 'СПб', 'Ереван', 'Астана', 'Алматы', 'Баку']
+    randomJob = random.choice(jobs)
+    randomCity = random.choice(cities)
+
+    print(randomJob)
+
+    return render_template('index.html', randomJob=randomJob, randomCity=randomCity)
 
 
 @app.route('/search')
 def search():
     job = request.args.get("job")
+    sch = request.args.get("schedule")
+    exp = request.args.get("experience")
 
-
-    data = requests.get(f"http://127.0.0.1:8800/getVacancies?name={job}").json()
-
+    data = requests.get(f"http://127.0.0.1:8800/getVacancies?name={job}&experience={exp}&schedule={sch}").json()
 
     return render_template('search.html', job=job, vacancies=data)
 
