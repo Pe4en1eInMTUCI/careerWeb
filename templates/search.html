@@ -64,6 +64,15 @@
             
             {% endfor %}
 
+            {% if vacancies|length == 0 %}
+
+            <div class="nothingFound">
+                <h1 class="NFtext">Упс... Похоже ничего не нашлось 😥</h1>
+                <h1 class="NFsug">Попробуйте другие параметры поиска</h1>
+            </div>
+
+            {% endif %}
+
         </div>
     </section>
 

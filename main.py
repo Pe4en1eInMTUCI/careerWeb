@@ -13,8 +13,6 @@ def root():
     randomJob = random.choice(jobs)
     randomCity = random.choice(cities)
 
-    print(randomJob)
-
     return render_template('index.html', randomJob=randomJob, randomCity=randomCity)
 
 
@@ -27,6 +25,10 @@ def search():
     data = requests.get(f"http://127.0.0.1:8800/getVacancies?name={job}&experience={exp}&schedule={sch}").json()
 
     return render_template('search.html', job=job, vacancies=data)
+
+@app.route('/stats')
+def stats():
+    return render_template('stats.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=80)
