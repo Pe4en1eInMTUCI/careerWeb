@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>careerPractice | Search</title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/search.css">
+</head>
+<body>
+
+    <section class="upperSearch">
+        <div class="wrapper">
+            <div class="searchField">
+                <form action="/search" class="searchForm">
+                    <input class="jobName" placeholder="Попробуй найти что-нибудь..." type="text" name="job" value="{{ job }}">
+                    <button class="findBtn">
+                        <img src="../static/images/arrow.svg" class="arrowImg">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="vacancies">
+        <div class="wrapper">
+
+            {% for vacancy in vacancies %}
+
+            <div class="vacCard">
+                <div class="vacInfo">
+                    <div class="vacDesc">
+                        <h1 class="vacTitle">{{ vacancy['name'] }}</h1>
+                        <h1 class="vacArea">{{ vacancy['area'] }}</h1>
+                        <h1 class="vacDescription">{{ vacancy['requirement'] }}</h1>
+                        <div class="lowerInfo">
+                            <div class="openVacBtn">
+                                <a href={{ vacancy['url'] }} class="linkTo">
+                                    Подробнее
+                                </a>
+                            </div>
+                            <h1 class="vacSalary">{{ vacancy['salary'] }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="wrapper">
+            Вакансии получены при помощи https://api.hh.ru <br>
+            Дубровин Александр БВТ2304. Учебная практика 2024 год
+        </div>
+    </section>
+
+</body>
+</html>
