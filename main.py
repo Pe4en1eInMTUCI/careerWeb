@@ -1,6 +1,5 @@
 import requests
 from flask import Flask, request, render_template
-import requests as rq
 import random
 
 app = Flask(__name__)
@@ -35,4 +34,4 @@ def stats():
     return render_template('stats.html', request=data[0], count=data[1])
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80)
+    app.run(debug=True, port=1020)
